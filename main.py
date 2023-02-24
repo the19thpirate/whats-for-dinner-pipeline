@@ -3,6 +3,7 @@ from datetime import datetime
 from warnings import filterwarnings
 filterwarnings("ignore")
 import streamlit as st
+from datetime import datetime
 
 st.cache(allow_output_mutation = True)
 def main():
@@ -34,8 +35,9 @@ with formContainer:
                 Tertiary Meal : {tertiaryMeal},
                 Meal Type : {mealType},
                 Homecooked? : {isHomecooked},
-                Date : {date_time}
+                Date : f'{date_time}'
             """)
+        date_time = datetime.strftime(date_time, '%Y-%m-%d') + ' 00:00:00'
         insertData = [idx, primaryMeal, secondaryMeal, tertiaryMeal,
         mealType, isHomecooked, date_time]
         successText = sqlWorker.insertNewRecord(insertData)
