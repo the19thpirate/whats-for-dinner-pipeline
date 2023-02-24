@@ -23,7 +23,7 @@ with formContainer:
     tertiaryMeal = st.text_input("Enter tertiary meal: ", key = "tertmeal")
     mealType = st.selectbox("Which meal is it? ", ("breakfast", "lunch", "dinner"))
     isHomecooked = st.selectbox("Is the meal homecooked? ", ("Yes", "No"))
-    date_time = st.text_input("Enter Date and Time: ", key = "time")
+    date_time = st.date_input("Enter Date and Time: ", key = "time")
 
     submitButton = st.form_submit_button("Submit")
     if submitButton:
